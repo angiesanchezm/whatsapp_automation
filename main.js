@@ -21,7 +21,7 @@ const SenderFunc = async (client) => {
                     const name = element[0];
                     const number_contact = element[1];
 
-                    textContent = `Hola ${name} 🤩 \n\n` 
+                    textContent = `Hola ${name} 🤩 \n\n`  // Message init
                     textContent += {message}
                     await client
                         .sendText(`${number_contact}@c.us`, textContent)
