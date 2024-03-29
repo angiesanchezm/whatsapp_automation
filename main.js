@@ -1,7 +1,6 @@
-import { message,doc_file,doc_image,name_doc_image } from './constants'
+const {message,doc_file,doc_image,name_doc_image} = require('./constants.json')
 const wppconnect = require('@wppconnect-team/wppconnect');
 const readXlsxFile = require('read-excel-file/node')
-
 
 wppconnect
   .create()
@@ -21,8 +20,9 @@ const SenderFunc = async (client) => {
                     const name = element[0];
                     const number_contact = element[1];
 
-                    textContent = `Hola ${name} 🤩 \n\n`  // Message init
-                    textContent += {message}
+                    textContent = `Hola ${name} 🤩 \n`  // Message init
+                    textContent += message              // Message body
+                    console.log("Intermedio",textContent)
                     await client
                         .sendText(`${number_contact}@c.us`, textContent)
                         .then((result) => {

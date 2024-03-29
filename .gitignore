@@ -1,1 +1,8 @@
 constants.js
+*.png
+*.jpg
+*.jpeg
+*.xlsx
+tokens/
+node_modules/
+package-lock.json
